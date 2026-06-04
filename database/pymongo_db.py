@@ -6,7 +6,7 @@ import streamlit as st
 load_dotenv()
 
 try:
-    MONGO_URI = os.getenv("MONGO_URI") or st.secrets['MONGO_URI']
+    MONGO_URI = st.secrets['MONGO_URI']
 
     client = MongoClient(MONGO_URI)
 
