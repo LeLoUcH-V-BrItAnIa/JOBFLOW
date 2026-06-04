@@ -1,12 +1,12 @@
 from dotenv import load_dotenv
 import os
 from pymongo import MongoClient
-
+import streamlit as st
 # Loading dot env 
 load_dotenv()
 
 try:
-    MONGO_URI = os.getenv("MONGO_URI")
+    MONGO_URI = os.getenv("MONGO_URI") or st.secrets['MONGO_URI']
 
     client = MongoClient(MONGO_URI)
 
